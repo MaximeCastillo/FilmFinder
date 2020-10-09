@@ -1,3 +1,5 @@
+const APIKEY = prompt("Bienvenue ! Tapez ici votre clé pour utiliser l'API");
+
 const search = (e) => {
     e.preventDefault();
     const searchedMovie = document.getElementById("searchInput").value;
@@ -38,7 +40,10 @@ const displayData = async (moviesList) => {
                                 </button>
                             </div>
                             <div class="modal-body">
-                            ${preciseMovie.Plot}
+                                Released date : ${preciseMovie.Released}
+                            </div>
+                            <div class="modal-body">
+                                ${preciseMovie.Plot}
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
