@@ -1,4 +1,4 @@
-const userKey = "ceec6004";
+const userKey = prompt("Welcome ! Enter your API Key here to use our website :");
 
 const search = (e) => {
     e.preventDefault();
