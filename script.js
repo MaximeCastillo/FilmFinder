@@ -1,4 +1,4 @@
-const APIKEY = prompt("Bienvenue ! Tapez ici votre clé pour utiliser l'API");
+const userKey = prompt("Bienvenue ! Tapez ici votre clé pour utiliser l'API");
 
 const search = (e) => {
     e.preventDefault();
@@ -7,7 +7,7 @@ const search = (e) => {
 }
 
 const searchMovie = async (searchedMovie) => {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${searchedMovie}`);
+    const response = await fetch(`http://www.omdbapi.com/?apikey=${userKey}&s=${searchedMovie}`);
     const data = await response.json();
     displayData(data.Search);
 }
@@ -16,7 +16,7 @@ const displayData = async (moviesList) => {
     const moviesDiv = document.getElementById('movies');
     moviesDiv.innerHTML = "";
     for (const movie of moviesList) {
-        const preciseResponse = await fetch(`http://www.omdbapi.com/?apikey=${APIKEY}&i=${movie.imdbID}`);
+        const preciseResponse = await fetch(`http://www.omdbapi.com/?apikey=${userKey}&i=${movie.imdbID}`);
         const preciseMovie = await preciseResponse.json();
         moviesDiv.innerHTML += 
         `<div class="card text-center" style="width: 18rem;">
