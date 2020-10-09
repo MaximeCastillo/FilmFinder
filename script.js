@@ -18,7 +18,7 @@ const displayData = async (moviesList) => {
     if (moviesList == null) {
         moviesDiv.innerHTML =
         `<div id="movies" class="">
-            <div class="card text-center" style="width: 18rem;">
+            <div class="card text-center col col-md-3" style="width: 18rem;">
                 <img src="https://www.mediavision.fr//wp-content/uploads/2015/08/mediavision_mineur-sit2.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Sorry, this movie doesn't exist !</h5>
@@ -31,7 +31,7 @@ const displayData = async (moviesList) => {
             const preciseResponse = await fetch(`https://www.omdbapi.com/?apikey=${userKey}&i=${movie.imdbID}`);
             const preciseMovie = await preciseResponse.json();
             moviesDiv.innerHTML += 
-            `<div class="card text-center" style="width: 18rem;">
+            `<div class="card text-center col col-md-3" style="width: 18rem;">
                 <img src=${movie.Poster} class="card-img-top" alt="Movie's poster here">
                 <div class="card-body">
                     <h5 class="card-title">${movie.Title}</h5>
